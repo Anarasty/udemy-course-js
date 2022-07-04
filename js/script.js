@@ -57,3 +57,19 @@ const object2 = {
 object2['Alan'] = 220;
 console.log(object2['Alan']);
 console.log(object2);
+
+// COMUNICATING WITH USER
+// alert('YOU');
+// const result1 = confirm('Want pizza?');
+// console.log(result1);
+// const answer = +prompt("Are you from Ukraine?", "yes");
+// console.log(typeof(answer));
+// console.log(answer + 2);
+const answers = [];
+answers[0] = prompt("Your name?", "");
+answers[1] = prompt("Your age?", "");
+answers[2] = prompt("Your country?", "");
+document.write(answers);
+console.log(typeof(answers));
+console.log(typeof(undefined));
+console.log(typeof(null));
