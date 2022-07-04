@@ -73,3 +73,11 @@ document.write(answers);
 console.log(typeof(answers));
 console.log(typeof(undefined));
 console.log(typeof(null));
+
+// INTERPOLATION
+const category = 'toys';
+console.log('https://someurl.com/' + category);
+console.log(`https://someurl.com/${category}/5`);
+
+const user1 = 'Gena';
+alert(`Hello, ${user1}`);
