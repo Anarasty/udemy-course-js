@@ -81,3 +81,28 @@ console.log(`https://someurl.com/${category}/5`);
 
 const user1 = 'Gena';
 alert(`Hello, ${user1}`);
+
+
+// OPERATORS
+console.log('arr' + ' - object');
+console.log(4 + ' - object');
+console.log(4 + + "5");
+
+let incr = 10,
+    decr = 10;
+//incr++; //++incr
+//decr--; //--decr
+console.log(incr++);
+console.log(decr--);
+console.log(++incr);
+console.log(--decr);
+console.log(7%2);
+console.log(2*4 == '8');
+console.log(2*4 === '8');
+console.log(4+4 !== '9');
+
+const isChecked = true,
+      isClose = false;
+console.log(isChecked && isClose);
+console.log(isChecked || isClose);
+console.log(isChecked || !isClose);
