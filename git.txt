@@ -1,0 +1,12 @@
+githowto.com - курс по гиту.
+
+Commands --
+git init - инициация репозитория
+git config --local (--global) user.name "NAME" - инициация юзернейма
+git config --local (--global) user.email example@gmail.com - инициация имеила
+git status - проверить сколько коммитов и файлов
+git add -A - добавить ВСЕ файлы которые можно закомитить
+git commit -a -m "MESSAGE" - создать коммит с меседжом
+git log - посмотреть все коммиты (когда сделаны, кто сделал и тд.)
+git remote add origin https://github.com/rep1 - получить доступ к репозиторию
+git push -u origin master - запулить в репозиторий
