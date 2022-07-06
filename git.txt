@@ -10,3 +10,5 @@ git commit -a -m "MESSAGE" - создать коммит с меседжом
 git log - посмотреть все коммиты (когда сделаны, кто сделал и тд.)
 git remote add origin https://github.com/rep1 - получить доступ к репозиторию
 git push -u origin master - запулить в репозиторий
+git clone https://github.com/rep1- клонировать репозиторий
+git pull - получить обновленные данные из репозитория
