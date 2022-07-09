@@ -106,3 +106,35 @@ const isChecked = true,
 console.log(isChecked && isClose);
 console.log(isChecked || isClose);
 console.log(isChecked || !isClose);
+
+// LOOPS
+if (2) { //0=false
+    console.log('Good');
+} else {
+    console.log('Error');
+}
+
+const num = 50;
+ if (num < 49) {
+    console.log('false')
+ } else if (num > 100) {
+    console.log('falsefalse')
+ } else {
+    console.log('true');
+ }
+(num === 50) ? console.log('Ok!') : console.log('Error!'); //ternary operator
+
+switch (num) {
+    case 49:
+        console.log('Not true');
+        break;
+    case 100:
+        console.log('false');
+        break;
+    case 50:
+        console.log('true');
+        break;
+    default:
+        console.log('Not this time');
+        break;
+}
