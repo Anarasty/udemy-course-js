@@ -272,3 +272,41 @@ let i = 2;
         }
         i++;
     }
+
+
+// FUNCTIONS
+
+let num2 = 20;
+
+function showFirstMessage (text) {
+    console.log(text);
+    let num2 = 10;
+    console.log(num2);
+}
+showFirstMessage('Hello Mark!');
+console.log(num2);
+
+
+function calc(a, b) {
+    return (a + b);
+}
+console.log(calc(4, 2));
+console.log(calc(3, 1));
+
+function ret() { //function declaration
+    let num2 = 50;
+    return num2;
+}
+
+const anotherNum = ret();
+console.log(anotherNum);
+
+let logger = function() { //function expression
+    console.log('Hello');
+};
+logger();
+
+const calc1 = (a, b) => { 
+    console.log('1');
+    return a + b;
+ }; // a + b;
