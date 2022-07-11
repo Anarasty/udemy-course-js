@@ -347,3 +347,31 @@ function doNothing() {
     
 }
 console.log(doNothing() === undefined);
+
+
+//METHODS AND PROPERTIES OF STRINGS AND NUMBERS
+const str = 'test';
+const arr1 = [1, 2, 3];
+
+console.log(str.length);
+console.log(arr1.length);
+
+console.log(str.toUpperCase());
+console.log(str);
+
+const fruit = "Some fruit";
+console.log(fruit.indexOf("fruit"));
+
+const logg = 'Hello world';
+console.log(logg.slice(6,11)); //slice(6) all line will be cutted
+console.log(logg.slice(-5,-1));
+console.log('--')
+console.log(logg.substring(6,11)); //same as SLICE but don't accept negative numbers
+console.log(logg.substr(6, 5)); //second argument is the number of symbols that you want to cut 
+
+const num3 = 12.2;
+console.log(Math.round(num3));
+
+const test1 = "12.2px";
+console.log(parseInt(test1));
+console.log(parseFloat(test1));
