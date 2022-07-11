@@ -309,4 +309,14 @@ logger();
 const calc1 = (a, b) => { 
     console.log('1');
     return a + b;
- }; // a + b;
+}; // a + b;
+
+//  FUNCTIONS ++
+const usdCurr = 28;
+const eurCurr = 32;
+
+function convert (amount, curr) {
+    console.log(curr * amount);
+}
+convert(500, usdCurr);
+convert(500, eurCurr);
