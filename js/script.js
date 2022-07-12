@@ -403,3 +403,45 @@ function done() {
 //     console.log('I have passed this lesson');
 // });
 learnJS('Javascript', done);
+
+//OBJECTS
+const options = {
+    name: 'test',
+    width: 1024,
+    height: 1024,
+    colors: {
+        border: 'black',
+        background: 'red'
+    },
+    makeTest: function () {
+        console.log('Test');
+    }
+};
+options.makeTest();
+
+//DESTRUCTING OBJECT
+const {border, background} = options.colors;
+console.log(border);
+
+console.log(Object.keys(options));
+console.log(Object.keys(options).length);
+
+// console.log(options.name);
+// console.log(options['name']);
+
+// delete options.name;
+// console.log(options);
+let counter = 0;
+
+for (let key in options) {
+    if (typeof(options[key]) === 'object'){
+        for (let i in options[key]) {
+            console.log(`Property ${i} has value ${options[key][i]}`);
+            // counter++;
+        }
+    } else {
+        console.log(`Property ${key} has value ${options[key]}`);
+        // counter++;
+    }
+}
+console.log(counter);
