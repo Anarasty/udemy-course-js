@@ -375,3 +375,31 @@ console.log(Math.round(num3));
 const test1 = "12.2px";
 console.log(parseInt(test1));
 console.log(parseFloat(test1));
+
+// CALLBACK FUNCTIONS
+function first() {
+    setTimeout(function() {
+        console.log(1);
+    }, 500);
+}
+
+function second() {
+    console.log(2);
+}
+
+first();
+second();
+
+function learnJS(lang, callback) {
+    console.log(`I am learning ${lang}`);
+    callback();
+}
+
+function done() {
+    console.log('I have passed this lesson');
+}
+
+// learnJS('JavaScript', function() {  //ANONYMUS FUNCTION
+//     console.log('I have passed this lesson');
+// });
+learnJS('Javascript', done);

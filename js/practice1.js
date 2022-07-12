@@ -27,7 +27,7 @@ const personalMovieDB = {
 
 function rememberMyFilms() {
     for (let i = 0; i < 2; i++) {
-        const a = prompt('Last films that you watched...',''),
+        const a = prompt('Last films that you watched...','').trim(),
               b = prompt('Rate film...','');
     
         if (a != null && b != null && a != '' && b != '' && a.length < 50) {
