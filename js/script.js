@@ -571,3 +571,27 @@ const objA = { //example 4
 
 const newObj = {...objA};
 console.log(newObj);
+
+// OOP
+let someStr = 'some';
+let strObj = new String(someStr);
+console.log(typeof(someStr));
+console.log(typeof(strObj));
+console.dir([1,2,3]);
+
+const soldier = {
+    health: 400,
+    armor: 100
+};
+const johnSoldier = {
+    health: 100
+};
+
+const lenySoldier = Object.create(soldier); //Prototype inheritance
+
+Object.setPrototypeOf(johnSoldier, soldier); //NEW FORMAT CODE !!!
+
+johnSoldier.__proto__ = soldier; //OLD FORMAT CODE !!!!!
+
+console.log(johnSoldier.armor);
+console.log(lenySoldier.armor);
