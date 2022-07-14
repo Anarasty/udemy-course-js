@@ -481,3 +481,93 @@ for (let value of arr2) {
   //ARRAY ITERATION
   console.log(value);
 }
+
+//PASS BY REFERENCE OR BY VALUE, SPREAD OPERATOR
+let a1 = 5;
+let b1 = a1;
+
+b1 = b1 + 5;
+console.log(b1);
+console.log(a1);
+
+const obj1 = {
+    a: 5,
+    b: 1
+};
+
+const copy = obj1; //pass by reference to object
+copy.a = 10;
+console.log(copy);
+console.log(obj1);
+
+//how to copy objects 
+function copy1 (mainObj) {
+    let objCopy = {};
+
+    let key;
+    for (key in mainObj) {
+        objCopy[key] = mainObj[key];
+    }
+    return objCopy;
+}
+const numbers = {
+    a: 2,
+    b: 5,
+    c: {
+        x: 7,
+        y: 4
+    }
+};
+
+const newNumbers = copy1(numbers);
+newNumbers.a = 10;
+// newNumbers.c.x = 10;
+console.log(newNumbers);
+console.log(numbers);
+
+//how to join two objects into 1 obj (object asign method)
+const add = {
+    d: 17,
+    e: 20
+};
+// console.log(Object.assign(numbers, add));
+const clone = Object.assign({}, add);
+
+clone.d = 20;
+// console.log(add);
+// console.log(clone);
+
+//method to create array copy 
+const oldArray = ['a', 'b', 'c'];
+const newArray = oldArray.slice();
+newArray[1] = 'aaaaa';
+console.log(newArray);
+console.log(oldArray);
+
+// SPREAD operatot new ES6 standart
+const video = ['youtube','vimeo','rutube']; //example 1
+const blogs = ['wordpress','livejournal','blogger'];
+const internet = [...video, ...blogs, 'vk','facebook'];
+console.log(internet);
+
+function log1 (a, b, c){ //example 2
+    console.log(a);
+    console.log(b);
+    console.log(c);
+}
+const num4 = [2, 5, 7];
+log1(...num4);
+console.log(num4);
+
+const array3 = ['a', 'b']; //example3
+const newArray1 = [...array3];
+console.log(array3);
+console.log(newArray1);
+
+const objA = { //example 4
+    one: 1,
+    two: 2
+};
+
+const newObj = {...objA};
+console.log(newObj);
