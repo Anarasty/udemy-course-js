@@ -595,3 +595,40 @@ johnSoldier.__proto__ = soldier; //OLD FORMAT CODE !!!!!
 
 console.log(johnSoldier.armor);
 console.log(lenySoldier.armor);
+
+
+// DYNAMIC TYPING 
+///1) test to syting
+console.log(typeof(String(null)));
+console.log(typeof(String(4)));
+///2)
+console.log(typeof(5 + ''));
+
+const num5 = 5;
+console.log("https://vk.com/catalog/" + num5); //OLD METHOD OF CODE!!!!
+
+const fontSize = 26 + 'px';
+
+///1) test to number
+console.log(typeof(Number('2')));
+///2)better way
+console.log(typeof(+'3'));
+///3)
+console.log(typeof(parseInt("15px",10)));
+
+let answer1 = +prompt("Hello","");
+
+///1) to boolean
+let switcher = null;
+if (switcher) {
+  console.log('Working..');
+}
+switcher = 1;
+if (switcher) {
+  console.log('Working..');
+}
+
+///2)
+console.log(typeof(Boolean("3")));
+///3) very rare!!!
+console.log(typeof(!!"445"));
