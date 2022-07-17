@@ -632,3 +632,30 @@ if (switcher) {
 console.log(typeof(Boolean("3")));
 ///3) very rare!!!
 console.log(typeof(!!"445"));
+
+
+//CLOSURE AND LEXICAL ENVIRONMENT
+
+function createCounter() {
+  let counter1 = 0;
+
+  const myFunction = function() {
+    counter1 = counter1 + 1;
+    return counter1;
+  };
+  return myFunction;
+}
+
+const increment = createCounter();
+const c1 = increment();
+const c2 = increment();
+const c3 = increment();
+
+console.log(c1,c2,c3);
+
+for (let j = 0; j < 9; j++){
+  for (let j = 0; j < 9; j++){
+    let number4 = 3;
+  }
+  console.log(number4);
+} 
