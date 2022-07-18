@@ -659,3 +659,48 @@ for (let j = 0; j < 9; j++){
   }
   console.log(number4);
 } 
+
+//INTERVIEW TASKS
+//1
+let xx = 5;
+alert(xx++);
+
+//2
+console.log(typeof([] + false));
+console.log(typeof([] + false - null));
+console.log(typeof([] + false - null + true));
+
+//3
+let y1 = 1;
+let x1 = y1 = 2;
+alert(x1);
+
+//4
+console.log([] + 1 + 2); //12
+
+//5
+alert("1"[0]);
+
+//6
+console.log(2 && 1 && null && 0 && undefined);
+
+//7
+console.log(!!(1 && 2) === (1 && 2));
+
+//8
+alert(null || 2 && 3 || 4);
+
+//9
+const aa = [1, 2, 3];
+const bb = [1, 2, 3];
+
+console.log(aa == bb);
+
+//10
+alert(+"Infinity");
+
+//11
+console.log("Snake" > "Apple");
+
+//12
+console.log(0 || "" || 2 || undefined || true || false);
