@@ -453,7 +453,7 @@ arr2.sort(compareNum);
 console.log(arr2); //ARRAY SORTING
 
 function compareNum(a, b) {
-    return a - b; //ARRAY SORTING
+  return a - b; //ARRAY SORTING
 }
 
 const str1 = prompt("", "");
@@ -491,8 +491,8 @@ console.log(b1);
 console.log(a1);
 
 const obj1 = {
-    a: 5,
-    b: 1
+  a: 5,
+  b: 1,
 };
 
 const copy = obj1; //pass by reference to object
@@ -500,23 +500,23 @@ copy.a = 10;
 console.log(copy);
 console.log(obj1);
 
-//how to copy objects 
-function copy1 (mainObj) {
-    let objCopy = {};
+//how to copy objects
+function copy1(mainObj) {
+  let objCopy = {};
 
-    let key;
-    for (key in mainObj) {
-        objCopy[key] = mainObj[key];
-    }
-    return objCopy;
+  let key;
+  for (key in mainObj) {
+    objCopy[key] = mainObj[key];
+  }
+  return objCopy;
 }
 const numbers = {
-    a: 2,
-    b: 5,
-    c: {
-        x: 7,
-        y: 4
-    }
+  a: 2,
+  b: 5,
+  c: {
+    x: 7,
+    y: 4,
+  },
 };
 
 const newNumbers = copy1(numbers);
@@ -527,8 +527,8 @@ console.log(numbers);
 
 //how to join two objects into 1 obj (object asign method)
 const add = {
-    d: 17,
-    e: 20
+  d: 17,
+  e: 20,
 };
 // console.log(Object.assign(numbers, add));
 const clone = Object.assign({}, add);
@@ -537,54 +537,56 @@ clone.d = 20;
 // console.log(add);
 // console.log(clone);
 
-//method to create array copy 
-const oldArray = ['a', 'b', 'c'];
+//method to create array copy
+const oldArray = ["a", "b", "c"];
 const newArray = oldArray.slice();
-newArray[1] = 'aaaaa';
+newArray[1] = "aaaaa";
 console.log(newArray);
 console.log(oldArray);
 
 // SPREAD operatot new ES6 standart
-const video = ['youtube','vimeo','rutube']; //example 1
-const blogs = ['wordpress','livejournal','blogger'];
-const internet = [...video, ...blogs, 'vk','facebook'];
+const video = ["youtube", "vimeo", "rutube"]; //example 1
+const blogs = ["wordpress", "livejournal", "blogger"];
+const internet = [...video, ...blogs, "vk", "facebook"];
 console.log(internet);
 
-function log1 (a, b, c){ //example 2
-    console.log(a);
-    console.log(b);
-    console.log(c);
+function log1(a, b, c) {
+  //example 2
+  console.log(a);
+  console.log(b);
+  console.log(c);
 }
 const num4 = [2, 5, 7];
 log1(...num4);
 console.log(num4);
 
-const array3 = ['a', 'b']; //example3
+const array3 = ["a", "b"]; //example3
 const newArray1 = [...array3];
 console.log(array3);
 console.log(newArray1);
 
-const objA = { //example 4
-    one: 1,
-    two: 2
+const objA = {
+  //example 4
+  one: 1,
+  two: 2,
 };
 
-const newObj = {...objA};
+const newObj = { ...objA };
 console.log(newObj);
 
 // OOP
-let someStr = 'some';
+let someStr = "some";
 let strObj = new String(someStr);
-console.log(typeof(someStr));
-console.log(typeof(strObj));
-console.dir([1,2,3]);
+console.log(typeof someStr);
+console.log(typeof strObj);
+console.dir([1, 2, 3]);
 
 const soldier = {
-    health: 400,
-    armor: 100
+  health: 400,
+  armor: 100,
 };
 const johnSoldier = {
-    health: 100
+  health: 100,
 };
 
 const lenySoldier = Object.create(soldier); //Prototype inheritance
@@ -596,50 +598,48 @@ johnSoldier.__proto__ = soldier; //OLD FORMAT CODE !!!!!
 console.log(johnSoldier.armor);
 console.log(lenySoldier.armor);
 
-
-// DYNAMIC TYPING 
+// DYNAMIC TYPING
 ///1) test to syting
-console.log(typeof(String(null)));
-console.log(typeof(String(4)));
+console.log(typeof String(null));
+console.log(typeof String(4));
 ///2)
-console.log(typeof(5 + ''));
+console.log(typeof (5 + ""));
 
 const num5 = 5;
 console.log("https://vk.com/catalog/" + num5); //OLD METHOD OF CODE!!!!
 
-const fontSize = 26 + 'px';
+const fontSize = 26 + "px";
 
 ///1) test to number
-console.log(typeof(Number('2')));
+console.log(typeof Number("2"));
 ///2)better way
-console.log(typeof(+'3'));
+console.log(typeof +"3");
 ///3)
-console.log(typeof(parseInt("15px",10)));
+console.log(typeof parseInt("15px", 10));
 
-let answer1 = +prompt("Hello","");
+let answer1 = +prompt("Hello", "");
 
 ///1) to boolean
 let switcher = null;
 if (switcher) {
-  console.log('Working..');
+  console.log("Working..");
 }
 switcher = 1;
 if (switcher) {
-  console.log('Working..');
+  console.log("Working..");
 }
 
 ///2)
-console.log(typeof(Boolean("3")));
+console.log(typeof Boolean("3"));
 ///3) very rare!!!
-console.log(typeof(!!"445"));
-
+console.log(typeof !!"445");
 
 //CLOSURE AND LEXICAL ENVIRONMENT
 
 function createCounter() {
   let counter1 = 0;
 
-  const myFunction = function() {
+  const myFunction = function () {
     counter1 = counter1 + 1;
     return counter1;
   };
@@ -651,14 +651,14 @@ const c1 = increment();
 const c2 = increment();
 const c3 = increment();
 
-console.log(c1,c2,c3);
+console.log(c1, c2, c3);
 
-for (let j = 0; j < 9; j++){
-  for (let j = 0; j < 9; j++){
+for (let j = 0; j < 9; j++) {
+  for (let j = 0; j < 9; j++) {
     let number4 = 3;
   }
   console.log(number4);
-} 
+}
 
 //INTERVIEW TASKS
 //1
@@ -666,13 +666,13 @@ let xx = 5;
 alert(xx++);
 
 //2
-console.log(typeof([] + false));
-console.log(typeof([] + false - null));
-console.log(typeof([] + false - null + true));
+console.log(typeof ([] + false));
+console.log(typeof ([] + false - null));
+console.log(typeof ([] + false - null + true));
 
 //3
 let y1 = 1;
-let x1 = y1 = 2;
+let x1 = (y1 = 2);
 alert(x1);
 
 //4
@@ -688,7 +688,7 @@ console.log(2 && 1 && null && 0 && undefined);
 console.log(!!(1 && 2) === (1 && 2));
 
 //8
-alert(null || 2 && 3 || 4);
+alert(null || (2 && 3) || 4);
 
 //9
 const aa = [1, 2, 3];
@@ -704,3 +704,122 @@ console.log("Snake" > "Apple");
 
 //12
 console.log(0 || "" || 2 || undefined || true || false);
+
+//RECURSION
+
+// function pow(x, n) {
+//   let resultPow = 1;
+//   for (let i = 0; i < n; i++) {
+//     resultPow *= x;
+//     // resultPow = x * resultPow;
+//   }
+//   return resultPow;
+// }
+
+//This function is similar to the top one.
+//It is written with different ways but returns same result.
+//RECURSION is when a function starts itself inside
+// function pow(x, n) {
+//   if (n === 1) {
+//     return x;
+//   } else {
+//     return x * pow(x, n - 1);
+//   }
+// }
+
+// pow(2, 1);
+// pow(2, 2);
+// pow(2, 3);
+// pow(2, 4);
+
+let students = {
+  js: [
+    {
+      name: "John",
+      progress: 100,
+    },
+    {
+      name: "Ivan",
+      progress: 60,
+    },
+  ],
+
+  html: {
+    basic: [
+      {
+        name: "Peter",
+        progress: 20,
+      },
+      {
+        name: "Ann",
+        progress: 18,
+      },
+    ],
+
+    pro: [
+      {
+        name: "Sam",
+        progress: 10,
+      },
+    ],
+    semi: {             //
+      students: [{      //
+        name: 'Test',   //
+        progress: 100   //
+      }]
+    }
+  }
+};
+
+function getTotalProgressByIteration(data) { // METHOD 1
+  let total = 0;
+  let students = 0;
+
+  for (let course of Object.values(data)) {
+    if (Array.isArray(course)) {
+      students += course.length;
+      for (let i = 0; i < course.length; i++) {
+        total += course[i].progress;
+      }
+    } else {
+      for (let subCourse of Object.values(course)) {
+        students += subCourse.length;
+
+        for (let i = 0; i < subCourse.length; i++) {
+          total += subCourse[i].progress;
+        }
+      }
+    }
+  }
+
+  return total / students;
+}
+
+console.log(getTotalProgressByIteration(students));
+
+
+function getTotalProgressByRecursion (data) { // METHOD 2
+  if (Array.isArray(data)) {
+    let total = 0;
+
+
+    for (let i = 0; i < data.length; i++) {
+      total += data[i].progress;
+    }
+
+    return [total, data.length];
+  } else {
+    let total = [0, 0];
+
+    for (let subData of Object.values(data)) {
+      const subDataArray = getTotalProgressByRecursion(subData); //Recursion
+      total[0] += subDataArray[0];
+      total[1] += subDataArray[1];
+    }
+
+    return total;
+  }
+}
+
+const resultFunction = getTotalProgressByRecursion(students);
+console.log(resultFunction[0]/resultFunction[1]);
