@@ -73,3 +73,39 @@ console.log(boxesGet); //live collection
 // console.log(document.body.children);
 
 console.log(Array.from(boxesGet));
+
+//SYMBOL DATA TYPE
+let id = Symbol("id");
+
+const obj = {
+    'name': 'Test',
+    // [Symbol('id')]: 1
+    [id]:1,
+    getId: function() {
+        return this[id];
+    }
+};
+
+// let id = Symbol("id");
+// let id2 = Symbol("id");
+
+// console.log(id == id2);
+
+// obj[id] = 1;
+
+// console.log(obj[id]);
+console.log(obj[Object.getOwnPropertySymbols(obj)[0]]);
+
+// for (let value in obj) console.log(value);
+
+const myAwesomeDB = {
+    movies: [],
+    actors: [],
+    // id: 123
+    [Symbol.for('id')]: 123
+};
+
+myAwesomeDB.id = '323232';
+
+console.log(myAwesomeDB[Symbol.for('id')]);
+console.log(myAwesomeDB);
