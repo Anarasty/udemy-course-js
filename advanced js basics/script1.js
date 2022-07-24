@@ -45,3 +45,31 @@ userData.hey?.();
 // }
 
 console.log(userData.skills?.js);
+
+//LIVING COLLECTIONS AND USEFUL METHODS
+
+const boxesQuery = document.querySelectorAll('.box1');
+const boxesGet = document.getElementsByClassName('box1');
+
+boxesQuery.forEach( box2 => {
+    if (box2.matches('.this')){
+        console.log('This one!');
+    }
+});
+
+console.log(boxesQuery[0].closest('.wrapper'));
+
+boxesQuery[0].remove();
+boxesGet[0].remove();
+
+for (let i = 0; i < 5; i++) {
+    const div = document.createElement('div');
+    div.classList.add('box1');
+    document.body.append(div);
+}
+
+console.log(boxesQuery);
+console.log(boxesGet); //live collection
+// console.log(document.body.children);
+
+console.log(Array.from(boxesGet));
