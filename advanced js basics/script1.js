@@ -298,3 +298,21 @@ console.log(set.values()); // same as keys
 console.log(set.keys()); // same as values
 console.log(set.entries());
 
+
+//BidInt
+const bigint = 23215812326546982739471297412472375937901576235n;
+
+const sameBigint = BigInt(23215812326546982739471297412472375937901576235);
+
+console.log(typeof(bigint));
+console.log(5n / 2n);
+console.log(2n > 1n);
+console.log(2n > 5);
+console.log(2n == 2);
+console.log(2n === 2);
+
+let bigint1 = 1n;
+let number1 = 2;
+
+console.log(bigint1 + BigInt(number1));
+console.log(Number(bigint1) + number1);
