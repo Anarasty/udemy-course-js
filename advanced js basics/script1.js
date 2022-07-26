@@ -267,3 +267,34 @@ console.log(goods);
 map.forEach((value, key, map) => { //FOURTH METHOD OF ENUMERATION
     console.log(key,value);
 });
+
+
+//SET
+const array = ['Alex', 'Ann', 'Oleg', 'Alex'];
+
+function unique(arr) {
+    return Array.from(new Set(arr));
+}
+console.log(unique(array));
+
+const set = new Set(array);
+
+set.add('Ivan');
+set.add('Oleg');
+
+console.log(set);
+
+// set.delete(value);
+// set.has(value);
+// set.clear();
+// set.size;
+
+// for (let value of set) console.log(value);
+set.forEach((value, valueAgain) => {
+    console.log(value, valueAgain);
+});
+
+console.log(set.values()); // same as keys
+console.log(set.keys()); // same as values
+console.log(set.entries());
+
