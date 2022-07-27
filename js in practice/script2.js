@@ -41,3 +41,38 @@ btn.addEventListener('click', myAnimation);
 //     console.log('Hello');
 //     id = setTimeout(log, 500);
 // }, 500);
+
+
+/// Garbage collector and memory leaks
+
+// function func() {
+//     window.smth = 'string';
+// }
+
+// const someRes = getData();
+// const node = document.querySelector('.class');
+// setInterval(function() {
+//     if (node) {
+//         node.innerHTML = someRes;
+//     }
+// }, 1000);
+
+// function outer() {
+//     const potentiallyHugeArray = [];
+//     return function iner() {
+//         potentiallyHugeArray.push('Hello');
+//         console.log("Hello!!");
+//     };
+// }
+// const sayHello = outer();
+
+function createElement() {
+    const div = document.createElement('div');
+    div.id = 'test';
+    document.body.append(testDiv);
+}
+createElement();
+function deleteElement() {
+    document.body.removeChild(document.getElementById('test'));
+}
+deleteElement();
