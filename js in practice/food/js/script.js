@@ -6,9 +6,9 @@ window.addEventListener("DOMContentLoaded", () => {
 
   function hideTabContent() {
     tabsContent.forEach((item) => {
-    //   item.style.display = "none";
-    item.classList.add('hide');
-    item.classList.remove('show', 'fade'); //DO NOT USE TOGGLE
+      //   item.style.display = "none";
+      item.classList.add("hide");
+      item.classList.remove("show", "fade"); //DO NOT USE TOGGLE
     });
 
     tabs.forEach((item) => {
@@ -18,8 +18,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
   function showTabContent(i = 0) {
     // tabsContent[i].style.display = "block";
-    tabsContent[i].classList.add('show', 'fade');
-    tabsContent[i].classList.remove('hide');
+    tabsContent[i].classList.add("show", "fade");
+    tabsContent[i].classList.remove("hide");
     tabs[i].classList.add("tabheader__item_active");
   }
 
@@ -40,21 +40,29 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   //Timer
-  const deadline = '2022-08-02';
-  
-  function getTimeRemaining(endtime) {
-    const t = Date.parse(endtime) - Date.parse(new Date());
-    const days = Math.floor(t / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((t / (1000 * 60 * 60) % 24));
-    const minutes = Math.floor((t / 1000 / 60) % 60);
-    const seconds = Math.floor((t / 1000) % 60);
+  const deadline = "2022-07-02";
 
+  function getTimeRemaining(endtime) {
+    let days, hours, minutes, seconds;
+    const t = Date.parse(endtime) - Date.parse(new Date());
+    
+    if (t <= 0) {
+      days = 0;
+      hours = 0;
+      minutes = 0;
+      seconds = 0;
+    } else {
+      days = Math.floor(t / (1000 * 60 * 60 * 24));
+      hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+      minutes = Math.floor((t / 1000 / 60) % 60);
+      seconds = Math.floor((t / 1000) % 60);
+    }
     return {
-      'total': t,
-      'days': days,
-      'hours': hours,
-      'minutes': minutes,
-      'seconds': seconds
+      total: t,
+      days: days,
+      hours: hours,
+      minutes: minutes,
+      seconds: seconds,
     };
   }
 
@@ -67,11 +75,11 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 
   function setClock(selector, endtime) {
-    const timer = document.querySelector('.timer');
-    const days = timer.querySelector('#days');
-    const hours = timer.querySelector('#hours');
-    const minutes = timer.querySelector('#minutes');
-    const seconds = timer.querySelector('#seconds');
+    const timer = document.querySelector(".timer");
+    const days = timer.querySelector("#days");
+    const hours = timer.querySelector("#hours");
+    const minutes = timer.querySelector("#minutes");
+    const seconds = timer.querySelector("#seconds");
     const timeInterval = setInterval(updateClock, 1000);
 
     updateClock();
@@ -89,5 +97,5 @@ window.addEventListener("DOMContentLoaded", () => {
       }
     }
   }
-  setClock('.timer', deadline);
+  setClock(".timer", deadline);
 });
