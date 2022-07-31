@@ -1,7 +1,7 @@
 'use strict';
 
 const box = document.querySelector('.box');
-const btn = document.querySelector('button');
+const btn = document.querySelector('.type-box');
 
 const width = box.clientWidth;
 const height = box.clientHeight;
@@ -43,3 +43,83 @@ alex.hello();
 
 console.log(ivan);
 console.log(alex);
+
+
+//THIS KEYWORD
+
+//common function of this = window
+//in strict mode this = undefined
+function showThis(a,b) {
+    console.log(this);
+    function sum() {
+        console.log(this);
+        return a + b;
+    }
+    console.log(sum());
+}
+showThis(4, 5);
+
+//context for object methods - the object itself
+const obj = {
+    a: 20,
+    b: 15,
+    sum: function () {
+        function shout() {
+            console.log(this);
+        }
+        shout();
+    }
+};
+obj.sum();
+
+//this in constructs and classes is a new object instance
+function Person(name, id) {
+    this.name = name;
+    this.id = id;
+    this.human = true;
+    this.hello = function () {
+        console.log(`Hello ${this.name}`);
+    };
+}
+let ann = new Person('Ann', 11);
+
+// Manual binding this: call, apply, bind
+function sayName(surname) {
+    console.log(this);
+    console.log(this.name + surname);
+}
+const user = {
+    name: 'Jon'
+};
+sayName.call(user, 'Smith');
+sayName.apply(user, ['Smith']);
+
+function count(num) {
+    return this*num;
+}
+const double = count.bind(2);
+console.log(double(3));
+console.log(double(13));
+
+
+const btn1 = document.querySelector('.super-btn');
+btn1.addEventListener('click', function(){
+    this.style.backgroundColor = 'red';
+});
+// btn1.addEventListener('click', (e) => {
+//     e.target.style.backgroundColor = 'red';
+// });
+
+const obj1 = {
+    num: 5,
+    sayNumber: function() {
+        const say = () => {
+            console.log(this.num);
+        };
+        say();
+    }
+};
+obj1.sayNumber();
+
+const doubles = a => a * 2;
+console.log(doubles(4));
