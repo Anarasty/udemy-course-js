@@ -173,10 +173,10 @@ window.addEventListener("DOMContentLoaded", () => {
     render() {
       const element = document.createElement("div");
       if (this.classes.length === 0) {
-        this.element = 'menu__item';
+        this.element = "menu__item";
         element.classList.add(this.element);
       } else {
-        this.classes.forEach(className => element.classList.add(className));
+        this.classes.forEach((className) => element.classList.add(className));
       }
       element.innerHTML = `
           <img src=${this.src} alt=${this.alt}>
@@ -200,91 +200,91 @@ window.addEventListener("DOMContentLoaded", () => {
     'Меню "Фитнес"',
     'Меню "Фитнес" - это новый подход к приготовлению блюд: больше свежих овощей и фруктов. Продукт активных и здоровых людей. Это абсолютно новый продукт с оптимальной ценой и высоким качеством!',
     9,
-    '.menu .container'
+    ".menu .container"
   ).render();
 
   new MenuCard(
     "img/tabs/elite.jpg",
     "elite",
-    'Меню “Премиум”',
-    'В меню “Премиум” мы используем не только красивый дизайн упаковки, но и качественное исполнение блюд. Красная рыба, морепродукты, фрукты - ресторанное меню без похода в ресторан!',
+    "Меню “Премиум”",
+    "В меню “Премиум” мы используем не только красивый дизайн упаковки, но и качественное исполнение блюд. Красная рыба, морепродукты, фрукты - ресторанное меню без похода в ресторан!",
     14,
-    '.menu .container',
-    'menu__item'
+    ".menu .container",
+    "menu__item"
   ).render();
 
   new MenuCard(
     "img/tabs/post.jpg",
     "post",
     'Меню "Постное"',
-    'Меню “Постное” - это тщательный подбор ингредиентов: полное отсутствие продуктов животного происхождения, молоко из миндаля, овса, кокоса или гречки, правильное количество белков за счет тофу и импортных вегетарианских стейков.',
+    "Меню “Постное” - это тщательный подбор ингредиентов: полное отсутствие продуктов животного происхождения, молоко из миндаля, овса, кокоса или гречки, правильное количество белков за счет тофу и импортных вегетарианских стейков.",
     21,
-    '.menu .container',
-    'menu__item'
+    ".menu .container",
+    "menu__item"
   ).render();
 
-  
   // Forms THIS PART WORKS WELL ONLY ON SERVER SIDE
-  
-  const forms = document.querySelectorAll('form');
+
+  const forms = document.querySelectorAll("form");
   const message = {
-    loading: 'icons/spinner.svg',
-    success: 'All good!',
-    failure: 'Something went wrong...'
+    loading: "icons/spinner.svg",
+    success: "All good!",
+    failure: "Something went wrong...",
   };
 
-  forms.forEach(item => {
+  forms.forEach((item) => {
     postData(item);
   });
 
   function postData(form) {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener("submit", (e) => {
       e.preventDefault();
 
-      const statusMessage = document.createElement('img');
+      const statusMessage = document.createElement("img");
       statusMessage.src = message.loading;
       statusMessage.style.cssText = `
         display: block;
         margin: 0 auto;
       `;
-      form.insertAdjacentElement('afterend', statusMessage);
+      form.insertAdjacentElement("afterend", statusMessage);
 
-      const request = new XMLHttpRequest();
-      request.open('POST', 'server.php');
-
-      request.setRequestHeader('Content-type', 'application/json');
       const formData = new FormData(form); //requires NAME in form tag
 
       const object = {};
-      formData.forEach(function(value, key) {
+      formData.forEach(function (value, key) {
         object[key] = value;
       });
 
-      const json = JSON.stringify(object);
-
-      request.send(json);
-      //Shift + f5 сброс кэша
-      request.addEventListener('load', () => {
-        if (request.status === 200) {
-          console.log(request.response);
+      fetch("server.php", {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(object),
+      })
+        .then((data) => data.text())
+        .then((data) => {
+          console.log(data);
           showThanksModal(message.success);
-          form.reset();
           statusMessage.remove();
-        } else {
+        })
+        .catch(() => {
           showThanksModal(message.failure);
-        }
-      });
+        })
+        .finally(() => {
+          form.reset();
+        });
     });
   }
 
   function showThanksModal(message) {
-    const preVModalDialog = document.querySelector('.modal__dialog');
+    const preVModalDialog = document.querySelector(".modal__dialog");
 
-    preVModalDialog.classList.add('hide');
+    preVModalDialog.classList.add("hide");
     openModal();
 
-    const thanksModal = document.createElement('div');
-    thanksModal.classList.add('.modal__dialog');
+    const thanksModal = document.createElement("div");
+    thanksModal.classList.add(".modal__dialog");
     thanksModal.innerHTML = `
       <div class="modal__content">
       <div class="modal__close">&times;</div>
@@ -292,12 +292,22 @@ window.addEventListener("DOMContentLoaded", () => {
       </div>
     `;
 
-    document.querySelector('.modal').append(thanksModal);
+    document.querySelector(".modal").append(thanksModal);
     setTimeout(() => {
       thanksModal.remove();
-      preVModalDialog.classList.add('show');
-      preVModalDialog.classList.remove('hide');
+      preVModalDialog.classList.add("show");
+      preVModalDialog.classList.remove("hide");
       closeModal();
     }, 4000);
   }
+
+  // fetch("https://jsonplaceholder.typicode.com/posts", {
+  //   method: "POST",
+  //   body: JSON.stringify({name: 'Alex'}),
+  //   headers: {
+  //     'Content-type': 'application/json'
+  //   }
+  // })
+  //   .then((response) => response.json())
+  //   .then((json) => console.log(json));
 });
