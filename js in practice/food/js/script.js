@@ -209,7 +209,16 @@ window.addEventListener("DOMContentLoaded", () => {
       new MenuCard(img, altimg, title, descr, price, '.menu .container').render();
     });
   });
-    // method 2
+
+  // method 2 with axios library
+  // axios.get('http://localhost:3000/menu')
+  // .then(data => {
+  //   data.data.forEach(({img, altimg, title, descr, price}) => {
+  //     new MenuCard(img, altimg, title, descr, price, '.menu .container').render();
+  //   });
+  // });
+
+  // method 3
   // getResoursce('http://localhost:3000/menu')
   // .then(data => createCard(data));
 
