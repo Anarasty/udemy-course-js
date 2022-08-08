@@ -39,3 +39,29 @@ const serializedPersone = JSON.stringify(persone);
 localStorage.setItem('alex', serializedPersone);
 
 console.log(JSON.parse(localStorage.getItem('alex')));
+
+// REGULAR EXPRESSIONS
+const ans = prompt('Enter your name: ');
+const reg = /\d/ig;
+console.log(ans.match(reg));
+// regEx classes
+// \d digits
+// \w words
+// \s spaces
+// Flags
+// i
+// g
+// m
+// console.log(ans.search(reg));
+console.log(ans.match(reg));
+
+const pass = prompt('Password: ');
+console.log(pass.replace(/./g, "*"));
+
+console.log('12-34-56'.replace(/-/g, ':'));
+
+const str = 'My name is R2D2';
+// console.log(str.match(/\w\d\w\d/i));
+console.log(str.match(/\W/ig));
+// W
+// D
