@@ -65,3 +65,21 @@ const str = 'My name is R2D2';
 console.log(str.match(/\W/ig));
 // W
 // D
+
+/// GETTERS AND SETTERS
+
+const persone1 = {
+    name: 'Alex',
+    age: 25,
+
+    get userAge() {
+        return this.age;
+    },
+
+    set userAge(num) {
+        this.age = num;
+    }
+};
+
+console.log(persone1.userAge = 30);
+console.log(persone1.userAge);
