@@ -113,3 +113,29 @@ console.log(ivan._age);
 ivan._age = 99;
 console.log(ivan._age);
 ivan.say();
+
+/// ANONYMOUS SELF-CALLING FUNCTIONS
+
+const app = '123';
+
+const number = 1;
+
+(function() {
+    let number = 2;
+    console.log(number);
+    console.log(number + 3);
+}());
+
+console.log(number);
+
+const user = (function(){
+    const privat = function() {
+        console.log('I am privat');
+    };
+
+    return {
+        sayHello: privat
+    };
+}());
+
+user.sayHello();
