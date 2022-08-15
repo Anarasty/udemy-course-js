@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      button {
+        width: 100px;
+        height: 40px;
+        margin-right: 50px;
+      }
+      .list {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 100px;
+      }
+      .list-item {
+        display: block;
+        border-radius: 4px;
+        width: 150px;
+        height: 50px;
+        transition: 1s;
+        border: 1px solid navy;
+        font-size: 20px;
+      }
+      .active {
+        width: 200px;
+        height: 80px;
+      }
+      .wrapper {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 50px;
+      }
+      img {
+        height: 300px;
+      }
+    </style>
+
+    <div class="list">
+      <button id="btn" class="list-item">Первый</button>
+      <button class="list-item">Второй</button>
+      <button class="list-item">Третий!</button>
+      <button class="list-item">Четвертый</button>
+      <button class="list-item">Пятый</button>
+    </div>
+
+    <div class="wrapper">
+      <img
+        src="https://cdn.pixabay.com/photo/2018/02/13/23/41/nature-3151869_960_720.jpg"
+        alt="1"
+        class="image"
+      />
+      <img
+        src="https://cdn.pixabay.com/photo/2018/03/06/03/56/cyclist-3202481_960_720.jpg"
+        alt="2"
+        class="image"
+      />
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="jquery.js"></script>
+  </body>
+</html>
