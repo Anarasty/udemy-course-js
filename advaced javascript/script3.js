@@ -51,3 +51,34 @@ try {
 
 const err = new Error("dddd");
 console.log(err.name, err.message, err.stack);
+
+
+/// FUNCTIONS GENEATORS
+function* generator() {
+  yield 'S';
+  yield 'C';
+  yield 'R';
+  yield 'I';
+  yield 'P';
+  yield 'T';
+}
+
+const str = generator();
+
+console.log(str.next());
+console.log(str.next().value);
+
+function* count(n) {
+  for (let i = 0; i < n; i++) {
+    yield i;
+  }
+}
+
+for (let k of count(4)) {
+  console.log(k);
+}
+
+const counter = count(2);
+console.log(counter.next().value);
+console.log(counter.next().value);
+console.log(counter.next().value);
