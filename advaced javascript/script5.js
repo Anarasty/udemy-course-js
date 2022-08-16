@@ -67,3 +67,24 @@ setTimeout(() => {
   console.log(1);
 }, 0);
 console.log(2);
+
+
+/// Macro-tasks and micro-tasks
+
+setTimeout(() => console.log('timeout'));
+
+Promise.resolve().then(() => console.log('promise'));
+
+queueMicrotask(() => console.log('Macrotask'));
+
+Promise.resolve().then(() => console.log('promise2'));
+
+console.log('code');
+
+//1 (macrotask) => {}
+//2 microtasks: then/catch/finally/await
+//3 render
+//4 (macrotask) => {}
+//5 microtasks: then/catch/finally/await
+//6 render
+//7 (macrotask) => {}
